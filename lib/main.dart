@@ -1,7 +1,17 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(
+    EasyLocalization(
+      supportedLocales: [
+        Locale('pt', 'BR'),
+        Locale('en', 'US'),
+      ],
+      path: 'lang',
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -10,7 +20,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Behind The masks',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData.dark(),
+      theme: ThemeData.light(),
+      localizationsDelegates: context.localizationDelegates,
+      supportedLocales: context.supportedLocales,
+      locale: context.locale,
       home: Home(),
     );
   }
@@ -21,7 +34,7 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text("Hello BTM"),
+        child: Text('splash.wellcome').tr(),
       ),
     );
   }
