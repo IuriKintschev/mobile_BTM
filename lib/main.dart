@@ -1,5 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
+import 'package:mobile_BTM/app/src/app_module.dart';
 
 void main() {
   runApp(
@@ -9,33 +11,9 @@ void main() {
         Locale('en', 'US'),
       ],
       path: 'lang',
-      child: MyApp(),
+      child: ModularApp(
+        module: AppModule(),
+      ),
     ),
   );
-}
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Behind The masks',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData.light(),
-      localizationsDelegates: context.localizationDelegates,
-      supportedLocales: context.supportedLocales,
-      locale: context.locale,
-      home: Home(),
-    );
-  }
-}
-
-class Home extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Text('splash.wellcome').tr(),
-      ),
-    );
-  }
 }
