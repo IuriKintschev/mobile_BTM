@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:mobile_BTM/app/core/constants/const_routes.dart';
 import 'package:mobile_BTM/app/src/app_controller.dart';
 import 'package:mobile_BTM/app/src/app_widget.dart';
 
@@ -19,11 +20,9 @@ class AppModule extends MainModule {
   @override
   List<Router> get routers => [
         Router(
-          '/',
+          ConstRoutes.splash,
           child: (_, args) => SplashPage(),
           transition: TransitionType.noTransition,
         ),
       ];
-
-  static Inject get to => Inject<AppModule>.of();
 }

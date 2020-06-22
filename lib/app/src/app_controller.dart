@@ -1,3 +1,3 @@
 class AppController {
-  String hello = 'Hello World';
+  String hello = 'Hello Flutter';
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:mobile_BTM/app/core/themes/theme_light.dart';
 
 class AppWidget extends StatelessWidget {
   @override
@@ -8,7 +9,7 @@ class AppWidget extends StatelessWidget {
     return MaterialApp(
       title: 'Behind The masks',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData.light(),
+      theme: AppThemeLight.getTheme(),
       // translate setup
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
