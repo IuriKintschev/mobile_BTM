@@ -19,6 +19,13 @@ class AppThemeDark {
       ),
       brightness: Brightness.dark,
       visualDensity: VisualDensity.adaptivePlatformDensity,
+      textTheme: TextTheme(
+        bodyText1: TextStyle(
+          fontWeight: FontWeight.w500,
+          fontSize: 16,
+          color: Colors.white,
+        ),
+      ),
     );
   }
 }
