@@ -1,5 +1,8 @@
 {
-  "splash": {
-    "wellcome": "Wellcome to app make!"
+  "appname": "Behind The Masks",
+  "login": {
+    "email": "E-mail",
+    "password": "Password",
+    "login": "Login"
   }
 }

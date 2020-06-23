@@ -4,7 +4,7 @@ import 'package:mobile_BTM/app/core/constants/const_routes.dart';
 import 'package:mobile_BTM/app/src/app_controller.dart';
 import 'package:mobile_BTM/app/src/app_widget.dart';
 
-import 'modules/splash/splash_page.dart';
+import 'modules/auth/auth_module.dart';
 
 class AppModule extends MainModule {
   @override
@@ -20,9 +20,8 @@ class AppModule extends MainModule {
   @override
   List<Router> get routers => [
         Router(
-          ConstRoutes.splash,
-          child: (_, args) => SplashPage(),
-          transition: TransitionType.noTransition,
+          ConstRoutes.login,
+          module: AuthModule(),
         ),
       ];
 }
