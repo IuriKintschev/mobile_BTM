@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter_modular/flutter_modular.dart';
 import 'package:mobile_BTM/app/core/themes/theme_dark.dart';
 import 'package:mobile_BTM/app/core/themes/theme_light.dart';
+import 'package:mobile_BTM/app/src/modules/auth/auth_widget.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class AppWidget extends StatelessWidget {
   @override
@@ -17,11 +17,7 @@ class AppWidget extends StatelessWidget {
       supportedLocales: context.supportedLocales,
       locale: context.locale,
       //translate setup end
-      // modular setup
-      initialRoute: '/',
-      navigatorKey: Modular.navigatorKey,
-      onGenerateRoute: Modular.generateRoute,
-      // modular setup end
+      home: AuthWidget(),
     );
   }
 }
