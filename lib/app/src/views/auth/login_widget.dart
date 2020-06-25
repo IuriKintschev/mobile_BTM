@@ -36,53 +36,49 @@ class LoginWidget extends StatelessWidget {
             ),
             Center(
               child: Container(
-                padding: EdgeInsets.all(10),
                 width: Get.width * 0.92,
                 height: Get.height * 0.26,
-                decoration: BoxDecoration(
-                  color: Get.theme.primaryColor,
-                  borderRadius: BorderRadius.circular(15),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withOpacity(0.3),
-                      blurRadius: 7,
-                      spreadRadius: 5,
-                      offset: Offset(3, 5),
+                child: Card(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  elevation: 10,
+                  child: Padding(
+                    padding: EdgeInsets.all(10),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        _label(
+                          label: 'login.email',
+                        ),
+                        CustomTextField(
+                          enabled: true,
+                          hint: 'email@io.com',
+                          textInputType: TextInputType.emailAddress,
+                          prefix: Icon(
+                            Icons.mail,
+                            color: Colors.black,
+                          ),
+                        ),
+                        _label(
+                          label: 'login.password',
+                        ),
+                        CustomTextField(
+                          hint: '123456',
+                          enabled: true,
+                          prefix: Icon(
+                            Icons.lock,
+                            color: Colors.black,
+                          ),
+                          suffix: CustomIconButton(
+                            radius: 32,
+                            iconData: Icons.visibility,
+                            onTap: () {},
+                          ),
+                        ),
+                      ],
                     ),
-                  ],
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    _label(
-                      label: 'login.email',
-                    ),
-                    CustomTextField(
-                      enabled: true,
-                      hint: 'email@io.com',
-                      textInputType: TextInputType.emailAddress,
-                      prefix: Icon(
-                        Icons.mail,
-                        color: Colors.black,
-                      ),
-                    ),
-                    _label(
-                      label: 'login.password',
-                    ),
-                    CustomTextField(
-                      hint: '123456',
-                      enabled: true,
-                      prefix: Icon(
-                        Icons.lock,
-                        color: Colors.black,
-                      ),
-                      suffix: CustomIconButton(
-                        radius: 32,
-                        iconData: Icons.visibility,
-                        onTap: () {},
-                      ),
-                    ),
-                  ],
+                  ),
                 ),
               ),
             ),
