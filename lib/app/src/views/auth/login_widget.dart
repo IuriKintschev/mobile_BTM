@@ -2,13 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:easy_localization/easy_localization.dart';
+// import 'package:mobile_BTM/app/core/controllers/login_controller.dart';
 import 'package:mobile_BTM/app/core/utils/scripts.dart' as scripts;
 import 'package:mobile_BTM/app/src/components/custom_icon_button.dart';
 import 'package:mobile_BTM/app/src/components/custom_text_field.dart';
 
 class LoginWidget extends StatelessWidget {
+  // final _loginController = LoginController.to;
+
   /*
-   * Labrl Widget
+   * Label Widget
    */
   Widget _label({@required String label}) => Container(
         padding: EdgeInsets.symmetric(vertical: 15),
