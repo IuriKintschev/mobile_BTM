@@ -4,18 +4,12 @@ import 'package:mobile_BTM/app/core/constants/const_colors.dart';
 class AppThemeLight {
   static ThemeData getTheme() {
     return ThemeData(
-      primaryColor: ConstColors.greenPrimary,
+      primaryColor: ConstColors.lightPrimary,
+      splashColor: ConstColors.lightBase,
       accentColor: ConstColors.purpleAccent,
+      scaffoldBackgroundColor: ConstColors.lightBase,
       appBarTheme: AppBarTheme(
-        color: ConstColors.lightBase,
         brightness: Brightness.light,
-        textTheme: TextTheme(
-          headline6: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.w500,
-            color: Colors.black,
-          ),
-        ),
       ),
       brightness: Brightness.light,
       visualDensity: VisualDensity.adaptivePlatformDensity,
@@ -24,6 +18,11 @@ class AppThemeLight {
           fontWeight: FontWeight.w500,
           fontSize: 16,
           color: Colors.black,
+        ),
+        subtitle1: TextStyle(
+          fontWeight: FontWeight.w500,
+          fontSize: 14,
+          color: Colors.grey[350],
         ),
       ),
     );
