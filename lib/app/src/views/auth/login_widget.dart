@@ -46,10 +46,6 @@ class LoginWidget extends StatelessWidget {
                 height: 60,
                 child: RaisedButton(
                   onPressed: () {},
-                  color: Get.theme.accentColor,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15),
-                  ),
                   child: Text(
                     'login.login',
                     style: TextStyle(

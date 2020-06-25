@@ -7,12 +7,15 @@ class AppThemeDark {
       primaryColor: ConstColors.darkPrimary,
       accentColor: ConstColors.purpleAccent,
       splashColor: ConstColors.darkBase,
+      // acafold
       scaffoldBackgroundColor: ConstColors.darkBase,
+      // appbar
       appBarTheme: AppBarTheme(
         brightness: Brightness.dark,
       ),
       brightness: Brightness.dark,
       visualDensity: VisualDensity.adaptivePlatformDensity,
+      // text
       textTheme: TextTheme(
         bodyText1: TextStyle(
           fontWeight: FontWeight.w500,
@@ -24,6 +27,14 @@ class AppThemeDark {
           fontSize: 14,
           color: Colors.white38,
         ),
+      ),
+      // raised button
+      buttonTheme: ButtonThemeData(
+        buttonColor: ConstColors.purpleAccent,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(15),
+        ),
+        textTheme: ButtonTextTheme.normal,
       ),
     );
   }
