@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:mobile_BTM/app/core/utils/scripts.dart' as scripts;
+import 'package:mobile_BTM/app/src/components/custom_icon_button.dart';
 import 'package:mobile_BTM/app/src/components/custom_text_field.dart';
 
 class LoginWidget extends StatelessWidget {
@@ -57,6 +58,8 @@ class LoginWidget extends StatelessWidget {
                       label: 'login.email',
                     ),
                     CustomTextField(
+                      enabled: true,
+                      hint: 'email@io.com',
                       textInputType: TextInputType.emailAddress,
                       prefix: Icon(
                         Icons.mail,
@@ -67,9 +70,16 @@ class LoginWidget extends StatelessWidget {
                       label: 'login.password',
                     ),
                     CustomTextField(
+                      hint: '123456',
+                      enabled: true,
                       prefix: Icon(
                         Icons.lock,
                         color: Colors.black,
+                      ),
+                      suffix: CustomIconButton(
+                        radius: 32,
+                        iconData: Icons.visibility,
+                        onTap: () {},
                       ),
                     ),
                   ],
