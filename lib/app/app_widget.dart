@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mobile_BTM/app/core/Routes/Router.dart';
+import 'package:mobile_BTM/app/core/Routes/middleware_router.dart';
 import 'package:mobile_BTM/app/core/bindings/initial_bindings.dart';
 import 'package:mobile_BTM/app/core/themes/theme_dark.dart';
 import 'package:mobile_BTM/app/core/themes/theme_light.dart';
@@ -20,8 +21,12 @@ class AppWidget extends StatelessWidget {
         //translate setup end
         // Get setup
         initialBinding: InitialBindins(),
-        // Get setup end
         initialRoute: '/',
         getPages: Router.routes,
+        defaultTransition: Transition.cupertino,
+        navigatorObservers: [
+          GetObserver(MiddleWareRouter.observer),
+        ],
+        // Get setup end
       );
 }

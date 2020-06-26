@@ -40,12 +40,15 @@ class LoginWidget extends StatelessWidget {
             Positioned(
               top: -Get.height * .08,
               right: Get.width * 0.11,
-              child: SvgPicture.asset(
-                scripts.themeCondition(
-                  isDark: 'assets/D-unicorn.svg',
-                  isLight: 'assets/L-unicorn.svg',
+              child: Hero(
+                tag: 'Unicorn',
+                child: SvgPicture.asset(
+                  scripts.themeCondition(
+                    isDark: 'assets/D-unicorn.svg',
+                    isLight: 'assets/L-unicorn.svg',
+                  ),
+                  height: Get.height * .5,
                 ),
-                height: Get.height * .5,
               ),
             ),
             Center(
