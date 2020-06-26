@@ -1,6 +1,10 @@
 import 'package:get/get.dart';
+import 'package:mobile_BTM/app/core/controllers/auth_controller.dart';
 
 class LoginController extends RxController {
+  // auth controller
+  final _authController = AuthControloler.to;
+
   static LoginController get to => Get.find();
 
   /*
@@ -12,7 +16,6 @@ class LoginController extends RxController {
   var passwordVisible = false.obs;
 
   var loading = false.obs;
-  var loggedIn = false.obs;
 
   /*
    * Setters
@@ -45,13 +48,9 @@ class LoginController extends RxController {
     await Future.delayed(Duration(seconds: 2));
 
     loading.value = false;
-    loggedIn.value = true;
+    _authController.setLoggedIn(true);
 
     email.value = "";
     password.value = "";
-  }
-
-  void logout() {
-    loggedIn.value = false;
   }
 }

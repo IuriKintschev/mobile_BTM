@@ -3,7 +3,18 @@ import 'package:get/get.dart';
 class AuthControloler extends RxController {
   static AuthControloler get to => Get.find();
 
-  var count = 0.obs;
+  /*
+   * Observables 
+   */
+  var _loggedIn = false.obs;
 
-  increment() => count.value++;
+  /*
+  * Setters
+  */
+  void setLoggedIn(bool setter) => _loggedIn.value = setter;
+
+  /*
+   * Getters 
+   */
+  bool get loggedIn => _loggedIn.value;
 }
