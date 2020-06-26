@@ -15,7 +15,11 @@ dependencies:
   #dependencies
   easy_localization: ^2.3.2
   get: ^2.14.1
+  supercharged: ^1.6.0
+
   flutter_svg: ^0.17.0
+  simple_animations: ^2.2.1
+  shimmer: ^1.1.1
   #dependencies end
 
   cupertino_icons: ^0.1.3

@@ -16,12 +16,13 @@ class Router {
       name: '/login',
       page: () => LoginWidget(),
       binding: LoginBindings(),
-      transitionDuration: Duration(milliseconds: 500),
+      transitionDuration: Duration(milliseconds: 800),
       transition: Transition.fade,
     ),
     GetPage(
       name: '/home',
       page: () => HomeWidget(),
+      transition: Transition.fade,
     )
   ];
 }

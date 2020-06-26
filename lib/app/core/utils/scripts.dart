@@ -14,13 +14,15 @@ String themeCondition({@required isDark, @required isLight}) {
 void errorLog({@required String message}) => Get.snackbar(
       'logs.error'.tr(),
       message,
+      colorText: Colors.white,
       backgroundColor: ConstColors.danger,
-      snackPosition: SnackPosition.BOTTOM,
+      snackPosition: SnackPosition.TOP,
     );
 
 void successLog({String message}) => Get.snackbar(
       'logs.success'.tr(),
       message,
+      colorText: Colors.white,
       backgroundColor: ConstColors.success,
-      snackPosition: SnackPosition.BOTTOM,
+      snackPosition: SnackPosition.TOP,
     );

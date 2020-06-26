@@ -1,11 +1,18 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mobile_BTM/app/core/controllers/auth_controller.dart';
 import 'package:mobile_BTM/app/core/utils/scripts.dart' as scripts;
 import 'package:easy_localization/easy_localization.dart';
+import 'package:simple_animations/simple_animations.dart';
+import 'package:supercharged/supercharged.dart';
 
 class LoginController extends RxController {
   // auth controller
   final _authController = AuthControloler.to;
+
+  //controller textfields
+  final TextEditingController txEmail = TextEditingController();
+  final TextEditingController txPass = TextEditingController();
 
   static LoginController get to => Get.find();
 
@@ -35,10 +42,12 @@ class LoginController extends RxController {
 
   bool get isPasswordValid => password.value.length >= 6;
 
-  Function get loginPressed =>
-      (isEmailValid && isPasswordValid && !loading.value)
-          ? login
-          : errorInputsLog;
+  void loginPressed() =>
+      (isEmailValid && isPasswordValid) ? login() : errorInputsLog();
+
+  CustomAnimationControl get controlAni => loading.value
+      ? CustomAnimationControl.PLAY
+      : CustomAnimationControl.PLAY_REVERSE;
 
   /*
   * Actions
@@ -49,13 +58,15 @@ class LoginController extends RxController {
   Future<void> login() async {
     loading.value = true;
 
-    await Future.delayed(Duration(seconds: 2));
+    await Future.delayed(3.seconds);
 
     loading.value = false;
     _authController.setLoggedIn(true);
 
     email.value = "";
     password.value = "";
+    txEmail.text = '';
+    txPass.text = '';
   }
 
   void errorInputsLog() => scripts.errorLog(
