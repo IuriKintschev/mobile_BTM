@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 import 'package:mobile_BTM/app/core/controllers/auth_controller.dart';
+import 'package:mobile_BTM/app/core/utils/scripts.dart' as scripts;
+import 'package:easy_localization/easy_localization.dart';
 
 class LoginController extends RxController {
   // auth controller
@@ -34,7 +36,9 @@ class LoginController extends RxController {
   bool get isPasswordValid => password.value.length >= 6;
 
   Function get loginPressed =>
-      (isEmailValid && isPasswordValid && !loading.value) ? login : null;
+      (isEmailValid && isPasswordValid && !loading.value)
+          ? login
+          : errorInputsLog;
 
   /*
   * Actions
@@ -53,4 +57,8 @@ class LoginController extends RxController {
     email.value = "";
     password.value = "";
   }
+
+  void errorInputsLog() => scripts.errorLog(
+        message: 'logs.errorInputs'.tr(),
+      );
 }

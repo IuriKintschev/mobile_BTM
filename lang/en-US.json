@@ -4,5 +4,10 @@
     "email": "E-mail",
     "password": "Password",
     "login": "Login"
+  },
+  "logs": {
+    "success": "Success",
+    "error": "Error",
+    "errorInputs": "This e-mail need to be valid, and password can not have menor of 6 characters!"
   }
 }
