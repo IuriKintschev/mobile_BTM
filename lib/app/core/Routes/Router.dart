@@ -1,7 +1,9 @@
 import 'package:get/get.dart';
 import 'package:mobile_BTM/app/core/bindings/login_bindings.dart';
+import 'package:mobile_BTM/app/core/bindings/register_bindings.dart';
 import 'package:mobile_BTM/app/core/bindings/splash_bindings.dart';
 import 'package:mobile_BTM/app/src/views/auth/login_widget.dart';
+import 'package:mobile_BTM/app/src/views/auth/register_widget.dart';
 import 'package:mobile_BTM/app/src/views/home/home_widget.dart';
 import 'package:mobile_BTM/app/src/views/splash/splash_page.dart';
 
@@ -16,6 +18,13 @@ class Router {
       name: '/login',
       page: () => LoginWidget(),
       binding: LoginBindings(),
+      transitionDuration: Duration(milliseconds: 800),
+      transition: Transition.fade,
+    ),
+    GetPage(
+      name: '/register',
+      page: () => RegisterWidget(),
+      binding: RegisterBindings(),
       transitionDuration: Duration(milliseconds: 800),
       transition: Transition.fade,
     ),

@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:easy_localization/easy_localization.dart';
-import 'package:mobile_BTM/app/core/controllers/login_controller.dart';
+import 'package:mobile_BTM/app/core/controllers/register_controller.dart';
 import 'package:mobile_BTM/app/src/components/custom_icon_button.dart';
 import 'package:mobile_BTM/app/src/components/custom_text_field.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:simple_animations/simple_animations.dart';
 import 'package:supercharged/supercharged.dart';
 
-class LoginWidget extends StatelessWidget {
-  final _loginControl = LoginController.to;
+class RegisterWidget extends StatelessWidget {
+  final _registerControl = RegisterController.to;
 
   /*
    * Label Widget
@@ -28,7 +28,7 @@ class LoginWidget extends StatelessWidget {
    * return icons visibility 
    */
   IconData _verifiIconVisibility() {
-    if (!_loginControl.passwordVisible.value) {
+    if (!_registerControl.passwordVisible.value) {
       return Icons.visibility;
     } else {
       return Icons.visibility_off;
@@ -59,7 +59,7 @@ class LoginWidget extends StatelessWidget {
                   opacity: value,
                   child: Container(
                     width: Get.width * .92,
-                    height: Get.height * .30,
+                    height: Get.height * .40,
                     child: Card(
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15),
@@ -71,11 +71,27 @@ class LoginWidget extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
                             _label(
+                              label: 'login.name',
+                            ),
+                            Obx(
+                              () => CustomTextField(
+                                controller: _registerControl.txName,
+                                enabled: true,
+                                hint: 'Iuri',
+                                textInputType: TextInputType.text,
+                                prefix: Icon(
+                                  Icons.person,
+                                  color: Colors.black,
+                                ),
+                                onChanged: _registerControl.setName,
+                              ),
+                            ),
+                            _label(
                               label: 'login.email',
                             ),
                             Obx(
                               () => CustomTextField(
-                                controller: _loginControl.txEmail,
+                                controller: _registerControl.txEmail,
                                 enabled: true,
                                 hint: 'email@io.com',
                                 textInputType: TextInputType.emailAddress,
@@ -83,7 +99,7 @@ class LoginWidget extends StatelessWidget {
                                   Icons.mail,
                                   color: Colors.black,
                                 ),
-                                onChanged: _loginControl.setEmail,
+                                onChanged: _registerControl.setEmail,
                               ),
                             ),
                             _label(
@@ -91,10 +107,11 @@ class LoginWidget extends StatelessWidget {
                             ),
                             Obx(
                               () => CustomTextField(
-                                controller: _loginControl.txPass,
+                                controller: _registerControl.txPass,
                                 enabled: true,
                                 hint: '123456',
-                                obscure: !_loginControl.passwordVisible.value,
+                                obscure:
+                                    !_registerControl.passwordVisible.value,
                                 prefix: Icon(
                                   Icons.lock,
                                   color: Colors.black,
@@ -102,18 +119,19 @@ class LoginWidget extends StatelessWidget {
                                 suffix: CustomIconButton(
                                   radius: 32,
                                   iconData: _verifiIconVisibility(),
-                                  onTap: _loginControl.togglePasswordVisibility,
+                                  onTap:
+                                      _registerControl.togglePasswordVisibility,
                                 ),
-                                onChanged: _loginControl.setPassword,
+                                onChanged: _registerControl.setPassword,
                               ),
                             ),
                             Expanded(
                               child: Align(
                                 alignment: Alignment.centerRight,
                                 child: FlatButton(
-                                  onPressed: () => Get.toNamed('/register'),
+                                  onPressed: () => Get.back(),
                                   child: Text(
-                                    'login.registerButton',
+                                    'login.loginPage',
                                     style: Get.textTheme.bodyText1.merge(
                                       TextStyle(
                                         fontSize: 16,
@@ -140,13 +158,13 @@ class LoginWidget extends StatelessWidget {
                   child: Center(
                     // ANIMATION
                     child: CustomAnimation<double>(
-                      control: _loginControl.controlAni,
+                      control: _registerControl.controlAni,
                       tween: (60.0).tweenTo(10.0),
                       duration: 200.milliseconds,
                       curve: Curves.bounceInOut,
                       // BUILDER WITH VISIBILITYWIDGET
                       builder: (context, child, value) => Visibility(
-                        visible: !_loginControl.loading.value,
+                        visible: !_registerControl.loading.value,
                         replacement: Shimmer.fromColors(
                           baseColor: Colors.purpleAccent,
                           highlightColor: Colors.white,
@@ -163,9 +181,9 @@ class LoginWidget extends StatelessWidget {
                           width: Get.width * .92,
                           height: value,
                           child: RaisedButton(
-                            onPressed: _loginControl.loginPressed,
+                            onPressed: _registerControl.loginPressed,
                             child: Text(
-                              'login.login',
+                              'login.register',
                               style: TextStyle(
                                 fontSize: 22,
                                 fontWeight: FontWeight.bold,

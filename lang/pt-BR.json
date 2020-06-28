@@ -3,11 +3,16 @@
   "login": {
     "email": "E-mail",
     "password": "Senha",
-    "login": "Entrar"
+    "login": "Entrar",
+    "registerButton": "Registrar-se",
+    "name": "Nome",
+    "loginPage": "Voltar ao login",
+    "register": "Registrar"
   },
   "logs": {
     "success": "Sucesso",
     "error": "Erro",
-    "errorInputs": "O e-mail precisa ser valido, e a senha nao pode ser menor que 6 caracteres!"
+    "errorInputs": "O e-mail precisa ser valido, e a senha nao pode ser menor que 6 caracteres!",
+    "errorInputsRegister": "Os campos precisam ser validos!"
   }
 }

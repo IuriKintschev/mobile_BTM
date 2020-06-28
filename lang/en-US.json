@@ -3,11 +3,16 @@
   "login": {
     "email": "E-mail",
     "password": "Password",
-    "login": "Login"
+    "login": "Login",
+    "registerButton": "Register",
+    "name": "Name",
+    "loginPage": "Back to login page",
+    "register": "Register"
   },
   "logs": {
     "success": "Success",
     "error": "Error",
-    "errorInputs": "This e-mail need to be valid, and password can not have menor of 6 characters!"
+    "errorInputs": "This e-mail need to be valid, and password can not have menor of 6 characters!",
+    "errorInputsRegister": "All fields need to be valid!"
   }
 }
